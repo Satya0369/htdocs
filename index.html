@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form action="submit.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Fetch Student Data from Database</h2>
+    <form action="fetch.php" method="GET">
+        <button type="submit">Fetch Data</button>
+    </form>
+    <script>
+        // run this function when the document is loaded
+        window.onload = () => {
+          // create a couple of elements in an otherwise empty HTML page
+          const heading = document.createElement("h1");
+          const headingText = document.createTextNode("Big Head!");
+          heading.appendChild(headingText);
+          document.body.appendChild(heading);
+        };
+      </script>
+</body>
+</html>

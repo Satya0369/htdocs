@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seatBtn{
+            padding:8px 15px;
+            margin:10px;
+            border:1px solid black;
+            font-size:20px;
+            border-radius:10px;
+        }
+        div{
+            width:50vw;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>Available and Un-available Seats</h3>
+<div>
+    <button class='seatBtn' data-status='unavailable' > 1</button>
+    <button class='seatBtn' data-status='available' > 2</button>
+    <button class='seatBtn' data-status='unavailable' > 3</button>
+    <button class='seatBtn' data-status='available' > 4</button>
+    <button class='seatBtn' data-status='unavailable'> 5</button>
+    <br>
+    <button class='seatBtn' data-status='available' > 6</button>
+    <button class='seatBtn' data-status='unavailable' > 7</button>
+    <button class='seatBtn' data-status='available' > 8</button>
+    <button class='seatBtn' data-status='available' > 9</button>
+    <button class='seatBtn' data-status='unavailable'> 10</button>
+</div>
+    <script>
+       
+       
+
+         const seats=document.querySelectorAll(".seatBtn"); 
+        seats.forEach(function(seat){
+
+            seat.addEventListener("mouseover", function(){
+            value=this.getAttribute("data-status");
+            // console.log(value)
+            if(value==='available'){
+                this.style.backgroundColor="green";
+                this.title=" seat is Available"
+            }
+            else{
+                this.title=" seat is Un-Available"
+            }
+        });
+        seat.addEventListener('mouseout', function() {
+                if (this.getAttribute('data-status')=== 'available') {
+                    this.style.backgroundColor = ''; 
+                }
+            });
+        });
+       
+       
+
+    </script>
+</body>
+</html>

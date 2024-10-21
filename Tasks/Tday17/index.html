@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <form action="" >
+        <div>
+            <label for="name">Name: </label><br>
+            <input type="text" id="name" onkeydown="nameFunction(event)" >     <!-- up, press also works -->
+        </div>
+        <div>
+            <label for="gen">Gender</label><br>
+            <select name="" id="gen" onchange="nameFunction(event)">
+                <option value="">Select Gen</option>
+                <option value="Mr">Mr.</option>
+                <option value="Mrs">Mrs.</option>
+            </select>
+        </div>
+        <div>
+            <label for="age">Age</label><br>
+            <input type="number" id="age" class="age" onkeyup="nameFunction(event)" >
+        </div>
+        <div> 
+            <label for="click">Click</label><br>
+            <input type="radio" name="" id="click" onclick="nameFunction(event)">
+        </div>
+    </form>
+    <script>
+        function nameFunction(event) {
+        if (event.key == "Enter") { 
+            nameVal = document.getElementById("name").value;
+            if (nameVal != "") alert(` ${nameVal} is your name`);
+            ageVal=document.getElementsByClassName("age")[0].value
+            if(ageVal != "") alert(` ${ageVal} is your Age`);
+        }
+        genVal = document.getElementById("gen").value
+        if(genVal=="Mr" || genVal=="Mrs") alert(`u selected  ${genVal}`)
+        if(event.type == "click") alert("Ypu clicked here")
+    }
+
+    /*
+    1. URL (Uniform Resource Locator)
+        Protocol: https://
+        Domain name: www.example.com
+        Path: /folder/page.html
+        Query parameters: ?id=123
+    2.Bse Url
+        Protocol: https://
+        Domain name: www.example.com
+    
+        
+
+
+    */
+    </script>
+</body>
+</html>
